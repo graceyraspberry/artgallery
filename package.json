@@ -3,10 +3,10 @@
   "type": "module",
   "version": "1.0.0",
   "description": "a digital art gallery",
-  "main": "index.js",
+  "main": "client/src/index.js",
   "scripts": {
     "build": "cd client && npm install && npm run build",
-    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "start": "node-babel server.js"
   },
   "author": "Grace Lam",
   "license": "ISC",
