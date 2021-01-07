@@ -51,6 +51,6 @@ app.use(express.static(path.join(__dirname, "../client/public")));
 
 // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
 app.get("*", function (req, res) {
-  const index = path.join(__dirname, "public", "index.html");
+  const index = path.join(__dirname, "client", "public", "index.html");
   res.sendFile(index);
 });
