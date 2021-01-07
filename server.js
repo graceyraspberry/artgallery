@@ -33,14 +33,12 @@ app.get("/api/config/paypal", (req, res) => {
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
-const my_path = require("path");
-
 // Serve static files from the React frontend app
-app.use(express.static(my_path.join(__dirname, "./client/public")));
+app.use(express.static(path.join(__dirname, "./client/public")));
 
 // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
 app.get("*", (req, res) => {
-  res.sendFile(my_path.join(__dirname + "/./client/public/index.html"));
+  res.sendFile(path.join(__dirname + "/./client/public/index.html"));
 });
 
 app.get("/", (req, res) => {
