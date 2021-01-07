@@ -34,7 +34,7 @@ function App() {
         <header className="row">
           <div>
             <Link className="artist" to="/">
-              artgallery
+              art gallery
             </Link>
           </div>
           <div>
