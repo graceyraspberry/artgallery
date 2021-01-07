@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import path from "path";
+import cors from "cors";
 import productRouter from "./routers/productRouter.js";
 import userRouter from "./routers/userRouter.js";
 import orderRouter from "./routers/orderRouter.js";
@@ -9,7 +10,6 @@ import uploadRouter from "./routers/uploadRouter.js";
 
 dotenv.config();
 
-const cors = require("cors");
 const whitelist = [
   "http://localhost:3000",
   "http://localhost:5000",
