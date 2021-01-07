@@ -45,7 +45,7 @@ productRouter.post(
       image: "/images/carousel-1.png",
       price: 0,
       category: "sample category",
-      brand: "sample brand",
+      artist: "sample artist",
       countInStock: 0,
       rating: 0,
       numReviews: 0,
@@ -67,7 +67,7 @@ productRouter.put(
       product.price = req.body.price;
       product.image = req.body.image;
       product.category = req.body.category;
-      product.brand = req.body.brand;
+      product.artist = req.body.artist;
       product.countInStock = req.body.countInStock;
       product.description = req.body.description;
       const updatedProduct = await product.save();
