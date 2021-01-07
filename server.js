@@ -9,6 +9,26 @@ import uploadRouter from "./routers/uploadRouter.js";
 
 dotenv.config();
 
+const cors = require("cors");
+const whitelist = [
+  "http://localhost:3000",
+  "http://localhost:5000",
+  "https://artgallery-mern.herokuapp.com",
+];
+const corsOptions = {
+  origin: function (origin, callback) {
+    console.log("** Origin of request " + origin);
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      console.log("Origin acceptable");
+      callback(null, true);
+    } else {
+      console.log("Origin rejected");
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+app.use(cors(corsOptions));
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -37,20 +57,22 @@ app.get("/", (req, res) => {
   res.send("Server is ready");
 });
 
+if (process.env.NODE_ENV === "production") {
+  // Serve static files from the React frontend app
+  app.use(express.static(path.join(__dirname, "client/build")));
+
+  // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
+  app.get("*", function (req, res) {
+    const index = path.join(__dirname, "client/build", "index.html");
+    res.sendFile(index);
+  });
+}
+
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
-  console.log(`Serve at${process.env.BASE_API_URL}`);
-});
-
-// Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, "../client/public")));
-
-// AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
-app.get("*", function (req, res) {
-  const index = path.join(__dirname, "client", "public", "index.html");
-  res.sendFile(index);
+  console.log(`Serve at${port}`);
 });
