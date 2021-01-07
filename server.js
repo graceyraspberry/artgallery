@@ -10,28 +10,28 @@ import uploadRouter from "./routers/uploadRouter.js";
 
 dotenv.config();
 
-const whitelist = [
-  "http://localhost:3000",
-  "http://localhost:5000",
-  "https://artgallery-mern.herokuapp.com",
-];
-const corsOptions = {
-  origin: function (origin, callback) {
-    console.log("** Origin of request " + origin);
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      console.log("Origin acceptable");
-      callback(null, true);
-    } else {
-      console.log("Origin rejected");
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-};
-app.use(cors(corsOptions));
-
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// const whitelist = [
+//   "http://localhost:3000",
+//   "http://localhost:5000",
+//   "https://artgallery-mern.herokuapp.com",
+// ];
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     console.log("** Origin of request " + origin);
+//     if (whitelist.indexOf(origin) !== -1 || !origin) {
+//       console.log("Origin acceptable");
+//       callback(null, true);
+//     } else {
+//       console.log("Origin rejected");
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+// };
+// app.use(cors(corsOptions));
 
 mongoose.connect(
   `mongodb+srv://dbuser:${process.env.DB_PASSWORD}@cluster0.jzq9n.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority` ||
