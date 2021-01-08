@@ -139,6 +139,7 @@ a.artist {
   justify-content: space-between;
   align-items: center;
 }
+
 .row.center {
   justify-content: center;
 }
@@ -305,4 +306,10 @@ img.large {
 }
 .table button {
   margin: 0 0.2rem;
+}
+
+/* Carousel */
+.sliderimg {
+  width: 50%;
+  object-fit: scale-down;
 }
