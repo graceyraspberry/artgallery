@@ -162,6 +162,11 @@ a.artist {
 img {
   border-radius: 0.5rem;
 }
+
+img.medium-center:hover {
+  transform: scale(0.95);
+}
+
 img.small {
   margin-left: 1rem;
   max-width: 3rem;
@@ -171,15 +176,20 @@ img.medium-left {
   padding-left: 10rem;
   max-width: 29rem;
   width: 100%;
+  transition: transform 0.5s;
 }
 
 img.medium-center {
   max-width: 29rem;
   width: 100%;
+  transition: transform 0.5s;
 }
 
 img.large {
+  padding-left: 5rem;
+  padding-top: 3rem;
   width: 100%;
+  max-width: 40rem;
 }
 
 /* Card */
@@ -206,6 +216,7 @@ img.large {
 
 .card-body {
   padding: 1rem;
+  font-size: 1.4rem;
 }
 .card-body > * {
   margin-bottom: 0.5rem;
@@ -216,10 +227,18 @@ img.large {
   padding: 1rem;
   display: inline-block;
 }
+
+div.inline {
+  float: left;
+}
+.clearBoth {
+  clear: both;
+}
+
 .price {
   font-size: 2rem;
   color: #404040;
-  padding: 5rem;
+  text-align: right;
 }
 /* Rating */
 .rating span {
@@ -278,6 +297,7 @@ img.large {
   position: absolute;
   display: none;
   right: 0;
+  font-size: 1.4rem;
   min-width: 12rem;
   padding: 1rem;
   z-index: 1;

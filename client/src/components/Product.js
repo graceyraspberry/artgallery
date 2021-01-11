@@ -9,19 +9,19 @@ export default function Product(props) {
       <Link to={`/product/${product._id}`}>
         <img className="medium-center" src={product.image} alt={product.name} />
       </Link>
+
       <div className="card-body">
         <Link to={`/product/${product._id}`}>
-          <h2>
-            {product.name}{" "}
-            <div className="artist-desc">by {product.artist}</div>
-          </h2>
+          <strong>{product.name}</strong>{" "}
+          <div className="artist">by {product.artist}</div>
         </Link>
+
         {/* <Rating
           rating={product.rating}
           numReviews={product.numReviews}
         ></Rating> */}
-        <div className="price">${product.price}</div>
       </div>
+      <div className="price">${product.price}</div>
     </div>
   );
 }
