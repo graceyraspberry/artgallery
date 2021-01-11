@@ -18,31 +18,31 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
     <div>
-      <h2>Top Sellers</h2>
+      {/* <h2>Top Sellers</h2> */}
       <>
-        <Carousel showThumbs="false" infiniteLoop useKeyboardArrows autoPlay>
+        {/* <Carousel showThumbs="false" infiniteLoop useKeyboardArrows autoPlay>
           <div>
             <img
-              src="/images/A_Zaria_Balance.png"
+              src="/images/carousel-1.jpg"
               className="sliderimg"
               alt="carousel-1"
             />
           </div>
           <div>
             <img
-              src="/images/Joe_Entranced.png"
+              src="/images/carousel-2.jpg"
               className="sliderimg"
               alt="carousel-2"
             />
           </div>
           <div>
             <img
-              src="/images/Jasmine_Good_Morning.png"
+              src="/images/carousel-3.jpg"
               className="sliderimg"
               alt="carousel-3"
             />
           </div>
-        </Carousel>
+        </Carousel> */}
       </>
       <h2>Featured Products</h2>
       {loading ? (

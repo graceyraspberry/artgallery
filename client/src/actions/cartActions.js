@@ -5,6 +5,7 @@ import {
   CART_SAVE_SHIPPING_ADDRESS,
   CART_SAVE_PAYMENT_METHOD,
   CART_SAVE_DELIVERY_ADDRESS,
+  CART_SAVE_ORGANIZATION,
 } from "../constants/cartConstants";
 
 export const addToCart = (productId, qty) => async (dispatch, getState) => {
@@ -33,9 +34,8 @@ export const saveDeliveryAddress = (data) => (dispatch) => {
   localStorage.setItem("deliveryAddress", JSON.stringify(data));
 };
 
-export const saveShippingAddress = (data) => (dispatch) => {
-  dispatch({ type: CART_SAVE_SHIPPING_ADDRESS, payload: data });
-  localStorage.setItem("shippingAddress", JSON.stringify(data));
+export const saveOrganization = (data) => (dispatch) => {
+  dispatch({ type: CART_SAVE_ORGANIZATION, payload: data });
 };
 export const savePaymentMethod = (data) => (dispatch) => {
   dispatch({ type: CART_SAVE_PAYMENT_METHOD, payload: data });

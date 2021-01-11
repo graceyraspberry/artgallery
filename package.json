@@ -3,10 +3,10 @@
   "type": "module",
   "version": "1.0.0",
   "description": "a digital art gallery",
-  "main": "client/src/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "cd client && npm install && npm run build",
-    "start": "node-babel server.js"
+    "start": "node server.js"
   },
   "author": "Grace Lam",
   "license": "ISC",

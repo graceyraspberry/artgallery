@@ -33,9 +33,10 @@ function App() {
     <BrowserRouter>
       <div className="grid-container">
         <header className="row">
-          <div>
+          <div class="row">
+            <img class="small" src="images/logo.png"></img>
             <Link className="artist" to="/">
-              Art Gallery
+              BLM Art Gallery
             </Link>
           </div>
           <div>
@@ -100,7 +101,7 @@ function App() {
           ></Route>
           <Route path="/signin" component={SigninScreen}></Route>
           <Route path="/register" component={RegisterScreen}></Route>
-          <Route path="/shipping" component={ShippingAddressScreen}></Route>
+          <Route path="/organization" component={ShippingAddressScreen}></Route>
           <Route path="/payment" component={PaymentMethodScreen}></Route>
           <Route path="/placeorder" component={PlaceOrderScreen}></Route>
           <Route path="/order/:id" component={OrderScreen}></Route>
