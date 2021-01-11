@@ -209,10 +209,17 @@ img.large {
 }
 .card-body > * {
   margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.card-desc {
+  padding: 1rem;
+  display: inline-block;
 }
 .price {
   font-size: 2rem;
   color: #404040;
+  padding: 5rem;
 }
 /* Rating */
 .rating span {

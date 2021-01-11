@@ -3,8 +3,8 @@ import expressAsyncHandler from "express-async-handler";
 import Order from "../models/orderModel.js";
 import { isAdmin, isAuth } from "../utils.js";
 
-const orderRouter = express.Router();
-orderRouter.get(
+const orderDigitalRouter = express.Router();
+orderDigitalRouter.get(
   "/",
   isAuth,
   isAdmin,
@@ -13,7 +13,7 @@ orderRouter.get(
     res.send(orders);
   })
 );
-orderRouter.get(
+orderDigitalRouter.get(
   "/mine",
   isAuth,
   expressAsyncHandler(async (req, res) => {
@@ -22,7 +22,7 @@ orderRouter.get(
   })
 );
 
-orderRouter.post(
+orderDigitalRouter.post(
   "/",
   isAuth,
   expressAsyncHandler(async (req, res) => {
@@ -31,7 +31,7 @@ orderRouter.post(
     } else {
       const order = new Order({
         orderItems: req.body.orderItems,
-        organization: req.body.organization,
+        email: req.body.shippingAddress,
         paymentMethod: req.body.paymentMethod,
         itemsPrice: req.body.itemsPrice,
         shippingPrice: req.body.shippingPrice,
@@ -47,7 +47,7 @@ orderRouter.post(
   })
 );
 
-orderRouter.get(
+orderDigitalRouter.get(
   "/:id",
   isAuth,
   expressAsyncHandler(async (req, res) => {
@@ -60,7 +60,7 @@ orderRouter.get(
   })
 );
 
-orderRouter.put(
+orderDigitalRouter.put(
   "/:id/pay",
   isAuth,
   expressAsyncHandler(async (req, res) => {
@@ -82,4 +82,4 @@ orderRouter.put(
   })
 );
 
-export default orderRouter;
+export default orderDigitalRouter;
