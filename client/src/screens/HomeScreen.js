@@ -20,29 +20,29 @@ export default function HomeScreen() {
     <div>
       {/* <h2>Top Sellers</h2> */}
       <>
-        {/* <Carousel showThumbs="false" infiniteLoop useKeyboardArrows autoPlay>
+        <Carousel showThumbs="false" infiniteLoop useKeyboardArrows autoPlay>
           <div>
             <img
-              src="/images/carousel-1.jpg"
+              src="/images/banner-1.png"
               className="sliderimg"
               alt="carousel-1"
             />
           </div>
           <div>
             <img
-              src="/images/carousel-2.jpg"
+              src="/images/banner-2.png"
               className="sliderimg"
               alt="carousel-2"
             />
           </div>
           <div>
             <img
-              src="/images/carousel-3.jpg"
+              src="/images/banner-3.png"
               className="sliderimg"
               alt="carousel-3"
             />
           </div>
-        </Carousel> */}
+        </Carousel>
       </>
       <h2>Featured Products</h2>
       {loading ? (

@@ -9,7 +9,7 @@ export default function PaymentMethodScreen(props) {
   if (!organization.donate) {
     props.history.push("/placeorder");
   }
-  const [paymentMethod, setPaymentMethod] = useState("PayPal");
+  const [paymentMethod, setPaymentMethod] = useState("Afrotectopia");
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();

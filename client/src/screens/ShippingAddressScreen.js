@@ -11,7 +11,7 @@ export default function ShippingAddressScreen(props) {
   if (!userInfo) {
     props.history.push("/signin");
   }
-  const [org, setOrganization] = useState("Organization");
+  const [org, setOrganization] = useState("Afrotectopia");
 
   const dispatch = useDispatch();
   const submitHandler = (e) => {
